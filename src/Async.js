@@ -31,6 +31,7 @@ const propTypes = {
 	]),
 	onInputChange: PropTypes.func,             // optional for keeping track of what is being typed
 	value: PropTypes.any,                      // initial field value
+	toggleReload: PropTypes.bool,  
 };
 
 const defaultCache = {};
@@ -69,6 +70,8 @@ export default class Async extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
+		if (toggleReload !== this.props.toggleReload)
+			this.loadOptions('');
 		if (nextProps.options !== this.props.options) {
 			this.setState({
 				options: nextProps.options,
