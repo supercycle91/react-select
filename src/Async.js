@@ -70,7 +70,7 @@ export default class Async extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (toggleReload !== this.props.toggleReload)
+		if (nextProps.toggleReload !== this.props.toggleReload)
 			this.loadOptions('');
 		if (nextProps.options !== this.props.options) {
 			this.setState({

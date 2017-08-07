@@ -99,7 +99,7 @@ var Async = (function (_Component) {
 	}, {
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(nextProps) {
-			if (toggleReload !== this.props.toggleReload) this.loadOptions('');
+			if (nextProps.toggleReload !== this.props.toggleReload) this.loadOptions('');
 			if (nextProps.options !== this.props.options) {
 				this.setState({
 					options: nextProps.options
